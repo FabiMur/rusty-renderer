@@ -1,6 +1,3 @@
 target/
 models/
 doc/
-
-// .ppm image files generated as output of the renderer
-*.ppm
