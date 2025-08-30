@@ -10,6 +10,8 @@
 - Texturing support (image textures, checker, solid color)
 - Cornell Box scene setup
 - Camera with depth of field and antialiasing
+- Antialiasing for smooth images
+- Path tracing for realistic global illumination
 - Multi-threaded rendering using Rayon
 - Easily extensible architecture for adding new primitives and materials
 
@@ -35,6 +37,4 @@ The rendered image will be saved as `output.ppm`.
 
 - `src/` - Source code organized by modules (camera, materials, primitives, textures, etc.)
 
-## License
-
-MIT
+##
