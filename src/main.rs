@@ -63,7 +63,7 @@ fn main() {
     // Emissive light (area light)
     let light = Arc::new(Material::new(
         lambert_white.clone(), specular.clone(), refrac15.clone(),
-        Some(Color::new(14.0, 14.0, 14.0)),
+        Some(Color::new(17.0, 17.0, 17.0)),
         1.0, 0.0, 0.0, 0.0
     ));
 
@@ -118,12 +118,28 @@ fn main() {
         Vec3::new(0.0, 100.0, 0.0),
         Arc::new(Material::new(
             lambert_white.clone(), specular.clone(), refrac15.clone(),
-            Some(Color::new(1.5, 1.5, 3.0)),
-            1.0, 0.0, 0.0, 0.0
+            Some(Color::new(0.5, 0.5, 1.0)),
+            1.0, 0.0, 0.0, 0.3
         )),
     )));
 
     // --- Main objects ---
+
+    // --- Earth textured sphere in the center ---
+    let earth_texture = Arc::new(ImageTexture::new("earthSurface.jpg"));
+    let earth_material = Arc::new(Material::new(
+        Lambertian::new_from_texture(earth_texture),
+        specular.clone(),
+        refrac15.clone(),
+        None,
+        1.0, 0.0, 0.0, 0.0
+    ));
+    world.add(Arc::new(Sphere::new(
+        Point3::new(278.0, 50.0, 278.0), // Center of the scene
+        50.0, // Smaller radius than main objects
+        earth_material,
+    )));
+
     // Tall translucent box
     let tall_box_mat = Arc::new(Material::new(
         Lambertian::new(Color::new(0.7, 0.2, 0.7)), // tint
