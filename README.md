@@ -2,6 +2,8 @@
 
 **rusty-renderer** is a ray tracing renderer written in Rust, inspired by the [Ray Tracing in One Weekend](https://raytracing.github.io/) book series by Peter Shirley.
 
+![Scene 1](examples/scene1.png)
+
 ## Features
 
 - Physically-based rendering with support for diffuse, specular, and refractive materials
